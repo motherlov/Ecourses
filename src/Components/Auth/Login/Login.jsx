@@ -15,17 +15,12 @@ const Login = () => {
   const { status } = useSelector((s) => s?.Auth);
   const { redirect } = useSelector((state) => state.Auth);
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const {register,handleSubmit,formState: { errors }, } = useForm();
   const onSubmit = (data) => {
     const UpData = {
       email: data.email,
       password: data.password,
     };
-
     dispatch(login(UpData));
   };
 
